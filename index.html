@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, orientation=landscape">
+    <title>webAr</title>
+    <link rel="shortcut icon" href="./images/mnhn-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+     <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>  <!-- este script hace funcionar a animation-mixer-->
+
+</head>
+<body>
+    <header class ="hero">
+        <nav class = "nav container">
+            <div class="nav__logo">
+                <h2 class ="nav__title">Museo Nacional de Historia Natural</h2>
+            </div> 
+            
+        </nav>
+            <section class="hero__container container">
+                <h1 class="hero__title">Animales de nuestro país</h1>
+                <p class="hero__paragraph"> El siguiente animal es una representación y animación 3d del verdadero. </p>
+                <br>
+                <br>
+                <br>
+                <!-- Panel Interactivo -->
+            <div class="panel">
+                    <div class="panel__info">
+                         
+                         <p id="info-text">
+                            <b><span style ="text-transform: uppercase;"> El Elefante Asiático</span></b><br><br>Es una especie de mamífero proboscídeo de la familia Elephantidae. Es el mayor mamífero del continente asiático. Su distribución original se extiende desde el sur de China e Indonesia occidental hasta las costas del golfo Pérsico y el sur de Mesopotamia, donde desapareció ya en el Neolítico. 
+                        </p>
+                          <button id="btnIdioma">Inglés</button>
+                    </div>
+                    
+                <div class="panel__animation">
+                    <button id="btnExitAR">Salir RA</button> <!-- BOTON para salir de la Realidad Aumentada--> 
+                    <model-viewer src="./assets/elefante_asiatico.glb"
+                            camera-controls
+                            auto-rotate
+                            ar 
+                            autoplay
+                            interaction-prompt="none"
+                            ar-modes="webxr scene-viewer quick-look"     
+                            shadow-intensity="1"> <!-- para mantener la info aunque no se apunte al QR, ]"ar-modes" y "shadow-intensity"-->
+                    </model-viewer>
+                    <!-- BOTON para reproducir el audio del animal--> 
+                     <button id="btnAudio">🔊 Sonido</button> 
+                     <audio id="audioPlayer" src="./assets/sonidoElefante.mpeg"></audio>        
+                </div>
+            </div>
+            </section>
+    </header>   
+<script src="./js/script.js"></script>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script><!--// para model-viewer  y modelos gitf-->
+</body>
+</html>
