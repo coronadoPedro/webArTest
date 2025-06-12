@@ -1,3 +1,16 @@
+   // --- Detectar parámetro en la URL ---
+            const params = new URLSearchParams(window.location.search);
+            const panelID = params.get("panel");
+
+                if (panelID) {
+                    document.querySelectorAll('.panel').forEach(panel => panel.style.display = 'none');
+            const targetPanel = document.getElementById(panelID);
+                if (targetPanel) {
+                targetPanel.style.display = 'block';
+                }
+            }
+   
+   
    // Script para que el boton cambie el idioma del párrafo -->
    
             
