@@ -1,14 +1,19 @@
-   // --- Detectar parámetro en la URL ---
-            const params = new URLSearchParams(window.location.search);
-            const panelID = params.get("panel");
+  // Detectar parámetro en la URL
+        const params = new URLSearchParams(window.location.search);
+        const panelID = params.get("panel");
 
-                if (panelID) {
-                    document.querySelectorAll('.panel').forEach(panel => panel.style.display = 'none');
-            const targetPanel = document.getElementById(panelID);
-                if (targetPanel) {
-                targetPanel.style.display = 'block';
-                }
+        if (panelID) {
+  // Ocultar todo el contenido de la página excepto el panel específico
+                document.body.innerHTML = ''; // Limpia el contenido del body
+
+                const targetPanel = document.getElementById(panelID);
+        if (targetPanel) {
+            document.body.appendChild(targetPanel); // Agrega solo el panel correcto al body
+            targetPanel.style.display = 'block';
             }
+        }       
+
+
    
    
    // Script para que el boton cambie el idioma del párrafo -->
