@@ -27,4 +27,21 @@
         window.close(); // Intenta cerrar la WebAR antes de volver al escáner
         });
 
+        //Ocultar paneles si hay hash  en la Url
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+
+            if (hash) {
+                // Oculta todos los paneles
+                const panels = document.querySelectorAll('.panel');
+                panels.forEach(panel => panel.style.display = 'none');
+
+    // Muestra solo el panel correspondiente
+                 const targetPanel = document.querySelector(hash);
+            if (targetPanel) {
+                 targetPanel.style.display = 'flex';
+                }
+                }
+            });
         
