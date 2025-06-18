@@ -23,11 +23,7 @@
             
         </nav>
             <section class="hero__container container">
-                <h1 class="hero__title">Animales de nuestro país</h1>
-                <p class="hero__paragraph"> El siguiente animal es una representación y animación 3d del verdadero. </p>
-                <br>
-                <br>
-                <br>
+               
                 <!-- Panel Interactivo -->
             <div class="panel" id="elefante" >
                     <div class="panel__info">
@@ -40,6 +36,8 @@
                     
                 <div class="panel__animation">
                     <button id="btnExitAR">Salir RA</button> <!-- BOTON para salir de la Realidad Aumentada--> 
+
+                    
                     <model-viewer src="./assets/elefante_asiatico.glb"
                             camera-controls
                             auto-rotate
@@ -51,6 +49,10 @@
                             min-camera-orbit="auto auto 5m"
                             max-camera-orbit="auto auto 10m"> <!-- para mantener la info aunque no se apunte al QR, ]"ar-modes" y "shadow-intensity"-->
                     </model-viewer>
+                    <!-- BOTONES para amplair y cerrar el panel de infor y animacion--> 
+                         <button id="btnExpandPanel">🔍 Ampliar</button>
+                         <button id="btnCloseExpand" style="display: none;">✖ Cerrar</button>
+
                     <!-- BOTON para reproducir el audio del animal--> 
                      <button id="btnAudio">🔊 Sonido</button> 
                      <audio id="audioPlayer" src="./assets/sonidoElefante.mpeg"></audio>        
@@ -59,6 +61,5 @@
             </section>
     </header>   
 <script src="./js/script.js"></script>
-
 </body>
 </html>
